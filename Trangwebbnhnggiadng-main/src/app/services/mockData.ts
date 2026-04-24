@@ -1,0 +1,216 @@
+// Initialize mock data in localStorage
+import type { User, Product } from '../types';
+
+export function initializeMockData() {
+  // Check if data already exists
+  if (localStorage.getItem('dataInitialized')) {
+    return;
+  }
+
+  // Initialize users with demo accounts
+  const users = [
+    {
+      id: '1',
+      email: 'admin@homely.com',
+      password: 'admin123',
+      name: 'Admin User',
+      role: 'admin',
+      phone: '0901234567',
+      address: '123 Admin Street, TPHCM',
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: '2',
+      email: 'user@homely.com',
+      password: 'user123',
+      name: 'Regular User',
+      role: 'user',
+      phone: '0912345678',
+      address: '456 User Street, TPHCM',
+      createdAt: new Date().toISOString(),
+    },
+  ];
+
+  // Initialize products
+  const products: Product[] = [
+    {
+      id: '1',
+      name: 'Coffee Maker Pro X1',
+      description: 'Máy pha cà phê tự động cao cấp với 15 chế độ pha chế khác nhau. Thiết kế sang trọng, dễ sử dụng và vệ sinh.',
+      price: 4500000,
+      category: 'Nhà bếp',
+      brand: 'Homely',
+      image: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=800',
+      stock: 50,
+      rating: 4.8,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '2',
+      name: 'Smart Air Purifier',
+      description: 'Máy lọc không khí thông minh với cảm biến chất lượng không khí. Lọc 99.97% bụi mịn và vi khuẩn.',
+      price: 6500000,
+      category: 'Điện gia dụng',
+      brand: 'TechHome',
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800',
+      stock: 30,
+      rating: 4.6,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '3',
+      name: 'Vacuum Cleaner Robot',
+      description: 'Robot hút bụi tự động với khả năng lập bản đồ thông minh, tự động sạc pin và vượt chướng ngại vật.',
+      price: 8900000,
+      category: 'Điện gia dụng',
+      brand: 'SmartClean',
+      image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800',
+      stock: 20,
+      rating: 4.9,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '4',
+      name: 'Induction Cooktop',
+      description: 'Bếp từ đơn công suất 2000W, tiết kiệm điện, an toàn với 8 chế độ nhiệt độ và hẹn giờ.',
+      price: 1200000,
+      category: 'Nhà bếp',
+      brand: 'Homely',
+      image: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800',
+      stock: 100,
+      rating: 4.5,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '5',
+      name: 'Smart Refrigerator',
+      description: 'Tủ lạnh thông minh 2 cánh với màn hình cảm ứng, kết nối WiFi và công nghệ làm lạnh inverter tiết kiệm điện.',
+      price: 15500000,
+      category: 'Điện gia dụng',
+      brand: 'TechHome',
+      image: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=800',
+      stock: 15,
+      rating: 4.7,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '6',
+      name: 'Electric Kettle',
+      description: 'Ấm đun nước siêu tốc 1.7L, tự động ngắt khi sôi, vỏ inox cao cấp, đun sôi trong 5 phút.',
+      price: 450000,
+      category: 'Nhà bếp',
+      brand: 'Homely',
+      image: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800',
+      stock: 150,
+      rating: 4.4,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '7',
+      name: 'Blender Pro 3000',
+      description: 'Máy xay sinh tố đa năng 1000W với 6 lưỡi dao inox, cối thủy tinh chịu nhiệt, 3 chế độ xay.',
+      price: 890000,
+      category: 'Nhà bếp',
+      brand: 'KitchenMaster',
+      image: 'https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800',
+      stock: 80,
+      rating: 4.6,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '8',
+      name: 'Smart Washing Machine',
+      description: 'Máy giặt thông minh 9kg với công nghệ inverter, 14 chương trình giặt, điều khiển qua app điện thoại.',
+      price: 12500000,
+      category: 'Điện gia dụng',
+      brand: 'TechHome',
+      image: 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800',
+      stock: 25,
+      rating: 4.8,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '9',
+      name: 'Rice Cooker Deluxe',
+      description: 'Nồi cơm điện cao cấp 1.8L với lòng nồi chống dính bền, giữ nhiệt 24h, nấu nhanh và tiết kiệm điện.',
+      price: 1350000,
+      category: 'Nhà bếp',
+      brand: 'Homely',
+      image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=800',
+      stock: 120,
+      rating: 4.7,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '10',
+      name: 'Air Fryer 5L',
+      description: 'Nồi chiên không dầu 5L với công nghệ tuần hoàn khí nóng 360°, màn hình LED, 8 chương trình nấu.',
+      price: 2200000,
+      category: 'Nhà bếp',
+      brand: 'KitchenMaster',
+      image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=800',
+      stock: 60,
+      rating: 4.5,
+      featured: true,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '11',
+      name: 'Microwave Oven',
+      description: 'Lò vi sóng 23L với 10 mức công suất, chức năng rã đông thông minh, nướng và hâm nóng tự động.',
+      price: 2800000,
+      category: 'Nhà bếp',
+      brand: 'TechHome',
+      image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=800',
+      stock: 45,
+      rating: 4.6,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: '12',
+      name: 'Smart Fan with Remote',
+      description: 'Quạt điều hòa thông minh với điều khiển từ xa, hẹn giờ, 3 chế độ gió và làm mát bằng hơi nước.',
+      price: 3500000,
+      category: 'Điện gia dụng',
+      brand: 'SmartClean',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
+      stock: 70,
+      rating: 4.4,
+      featured: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+  ];
+
+  // Save to localStorage
+  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('products', JSON.stringify(products));
+  localStorage.setItem('orders', JSON.stringify([]));
+  localStorage.setItem('dataInitialized', 'true');
+
+  console.log('✅ Mock data initialized successfully');
+  console.log('🔑 Demo accounts:');
+  console.log('   Admin: admin@homely.com / admin123');
+  console.log('   User: user@homely.com / user123');
+}

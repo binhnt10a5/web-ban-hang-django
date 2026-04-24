@@ -1,0 +1,68 @@
+import type { Category } from '../types';
+
+export const categories: Category[] = [
+  {
+    id: 'cat-1',
+    name: 'Phòng khách',
+    slug: 'phong-khach',
+    description: 'Nội thất phòng khách hiện đại, sang trọng',
+    icon: '🛋️',
+    order: 1,
+  },
+  {
+    id: 'cat-2',
+    name: 'Phòng ngủ',
+    slug: 'phong-ngu',
+    description: 'Đồ nội thất phòng ngủ ấm cúng',
+    icon: '🛏️',
+    order: 2,
+  },
+  {
+    id: 'cat-3',
+    name: 'Phòng bếp',
+    slug: 'phong-bep',
+    description: 'Thiết bị và nội thất nhà bếp',
+    icon: '🍳',
+    order: 3,
+  },
+  {
+    id: 'cat-4',
+    name: 'Phòng làm việc',
+    slug: 'phong-lam-viec',
+    description: 'Nội thất văn phòng tại nhà',
+    icon: '💼',
+    order: 4,
+  },
+  {
+    id: 'cat-5',
+    name: 'Phòng tắm',
+    slug: 'phong-tam',
+    description: 'Thiết bị vệ sinh và nội thất phòng tắm',
+    icon: '🚿',
+    order: 5,
+  },
+  {
+    id: 'cat-6',
+    name: 'Đồ trang trí',
+    slug: 'do-trang-tri',
+    description: 'Đồ trang trí nội thất, tranh ảnh, đèn',
+    icon: '🎨',
+    order: 6,
+  },
+  {
+    id: 'cat-7',
+    name: 'Sân vườn',
+    slug: 'san-vuon',
+    description: 'Nội thất ngoài trời, sân vườn',
+    icon: '🌿',
+    order: 7,
+  },
+  {
+    id: 'cat-8',
+    name: 'Thiết bị điện',
+    slug: 'thiet-bi-dien',
+    description: 'Thiết bị điện gia dụng',
+    icon: '🔌',
+    order: 8,
+  },
+];
